@@ -1,0 +1,13 @@
+version: '3'
+services:
+  nagios:
+    image: nagios:latest
+    ports:
+      - 8080:80
+    volumes:
+      - ./nagios/etc:/usr/local/nagios/etc
+      - ./nagios/var:/usr/local/nagios/var
+      - ./nagiosgraph/var:/usr/local/nagiosgraph/var
+    environment:
+      - TZ=Asia/Tokyo
+    restart: always
