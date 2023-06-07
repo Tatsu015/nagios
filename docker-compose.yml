@@ -10,4 +10,4 @@ services:
       - ./nagiosgraph/var:/usr/local/nagiosgraph/var
     environment:
       - TZ=Asia/Tokyo
-    restart: always
+    tty: true
