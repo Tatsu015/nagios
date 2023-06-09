@@ -1,10 +1,16 @@
 version: '3'
 services:
   nagios:
-    image: jasonrivers/nagios:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: nagios
     ports:
       - 8080:80
     environment:
       - TZ=Asia/Tokyo
     tty: true
+    # volumes:
+    #   - type: bind
+    #     source: ./nagios
+    #     target: /opt/nagios
